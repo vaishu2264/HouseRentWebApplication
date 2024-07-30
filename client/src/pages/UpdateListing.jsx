@@ -246,31 +246,38 @@ export default function CreateListing() {
               />
               <span>Furnished</span>
             </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='offer'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.offer}
-              />
-              <p>Bed Rooms</p>
-            </div>
+            
+          </div>
+          <div className='flex flex-wrap gap-6'>
             <div className='flex items-center gap-2'>
               <input
                 type='number'
-                id='bathrooms'
+                id='bedrooms'
                 min='1'
                 max='10'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
-                value={formData.bathrooms}
+                value={formData.bedrooms}
+              />
+              <p>Beds</p>
+            </div>
+            
+            <div className='flex items-center gap-2'>
+              <input
+                type='number'
+                id='regularPrice'
+                min='50'
+                max='10000000'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.regularPrice}
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>(per month)</span>
+                  <span className='text-xs'>(INR per month)</span>
                 )}
               </div>
             </div>
